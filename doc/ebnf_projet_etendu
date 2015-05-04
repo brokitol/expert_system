@@ -1,0 +1,65 @@
+<line>		::= <rule> || <com> || <fact> || <queries>
+
+<com>		::= '#' { all ACSII }
+
+<fact>		::= <symbole> = ( TRUE | FALSE )
+
+<queries>	::= <symbole> ?
+
+<rule>		::= <operande> ( <IMPLIES> || <IIF> ) <operande>
+
+<operande>	::= { <P_O> } [<NOT>] <relation> { <P_F> } { <condition> { <P_O> } [<NOT>] <relation> { <P_F> } }
+
+<condition>	::= ( <AND> || <OR> || <XOR> )
+
+<relation>	::= <symbole> <regle> <symbole>
+
+<regle> = A..Z { A..Z }
+
+<symbole> = A..Z { A..Z }
+
+<AND>		::=		+
+<OR>		::=		|
+<XOR>		::=		^
+
+<NOT>		::=		!
+
+<IMPLIES>	::=		=>
+<IIF>		::=		<=>
+
+<P_O>		::=		(
+<P_F>		::=		)
+
+
+
+exemple du pdf :
+
+# this is a comment$
+# all the required rules and symbols, along with the bonus ones, will be
+# shown here. spacing is not important
+
+C => E # C implies E
+A + B + C => D # A and B and C implies D
+A | B => C # A or B implies C
+A + !B => F # A and not B implies F
+C | !G => H # C or not G implies H
+V ^ W => X # V xor W implies X
+A + B => Y + Z # A and B implies Y and Z
+C | D => X | V # C or D implies X or V
+E + F => !V # E and F implies not V
+A + B <=> C # A and B if and only if C
+A + B <=> !C # A and B if and only if not C
+
+A <regle1> C and C <regle2> B => A <regle3> B
+A <pere> C and C <pere> B => A <grandpere> B
+
+
+
+A = TRUE
+B = FALSE
+=ABG # Initial facts : A, B and G are true. All others are false.					// fuck cette connerie. on fait un truc propre et bien concus.
+
+# If no facts are initially true, then a simple "=" followed						// idem
+# by a newline is used
+
+?GVX # Queries : What are G, V and X ?												// idem

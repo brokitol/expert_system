@@ -1,0 +1,16 @@
+en entre du programe :
+	- un fichier (posibilite de plusieur fichier ?)
+	- un mode console ? -> un fichier de fait et regle, un mode console pour poser les questions ?
+
+sortie du parser:
+	un arbre binaire tel que :
+
+a + b + c => d + f
+
+			+								|				+
+		/		\							|			/		\
+	a				+						|		d				f
+				/		\					|
+			b				c				|
+
+
