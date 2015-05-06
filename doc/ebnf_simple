@@ -1,0 +1,27 @@
+<line>		::= <rule> || <fact> || <queries>
+
+<fact>		::= <symbole> = ( TRUE | FALSE )
+
+<queries>	::= <symbole> ? 
+
+<rule>		::= <symbole> <IMPLIES> <operande>
+
+<operande>	::= <symbole> { <AND> <symbole> }
+
+<symbole> = A..Z { A..Z }
+
+<AND>		::=		+
+
+<IMPLIES>	::=		=>
+
+exemple du pdf :
+
+C => E
+A + B + C => D
+A + B => Y + Z
+A + B <=> C
+
+A = TRUE
+B = FALSE
+
+A + B ? # Queries : A + B are true or false ?

@@ -4,7 +4,7 @@
 
 <fact>		::= <symbole> = ( TRUE | FALSE )
 
-<queries>	::= <symbole> ?
+<queries>	::= <symbole> ? || <symbole> <regle> <symbole> ?
 
 <rule>		::= <operande> ( <IMPLIES> || <IIF> ) <operande>
 
@@ -12,9 +12,9 @@
 
 <condition>	::= ( <AND> || <OR> || <XOR> )
 
-<relation>	::= <symbole> <regle> <symbole>
+<relation>	::= <symbole> <regle> <symbole> || <symbole>
 
-<regle> = A..Z { A..Z }
+<regle> = A..Z { A..Z } || { " { all ACSII } " }
 
 <symbole> = A..Z { A..Z }
 
